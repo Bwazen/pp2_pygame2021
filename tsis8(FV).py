@@ -196,7 +196,7 @@ while not game_done:
         DISPLAYSURF.blit(scores, (10, 10))
         
         scores2 = font_small.render(str(score2), True, GOLD)
-        DISPLAYSURF.blit(scores2, (50, 10))
+        DISPLAYSURF.blit(scores2, (370, 10))
 
         for sprite in all_sprites:
             sprite.move()

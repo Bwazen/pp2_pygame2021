@@ -51,6 +51,7 @@ def game_loop():
         screen.fill(BLACK)
         message(font_style, "PRESS SPACE TO CONTINUE GAME", RED, WIDTH - 550, HEIGHT // 2)
         message(font_style, "PRESS ANY BUTTON TO START", RED, WIDTH - 550, HEIGHT // 2.5 )
+        message(font_style, "WHILE PLAYING PRESS ESCAPE TO SAVE GAME", RED, WIDTH - 550, HEIGHT // 3)
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
@@ -79,6 +80,8 @@ def game_loop():
               message(score_font, "PLAYER 2 WIN WITH SCORE: " + str(snake2.get_length() - 1),WHITE ,WIDTH - 550, HEIGHT // 2)
             if (snake2.get_length() - 1) == (snake1.get_length() - 1):
                  message(score_font, "DRAW" ,WHITE ,WIDTH //2, HEIGHT // 2)
+            message(score_font, "PRESS 'q' TO CLOSE GAME ",WHITE,WIDTH - 550, HEIGHT // 3)
+            message(score_font, "PRESS 'r' TO RESTART GAME ",WHITE,WIDTH - 550, HEIGHT // 3.5)
             
             
             pygame.display.update()
@@ -88,7 +91,7 @@ def game_loop():
                     if event.key == pygame.K_q:
                         game_over = False
                         game_close = True
-                    if event.key == pygame.K_c:
+                    if event.key == pygame.K_r:
                         game_loop()
 
         for event in pygame.event.get():
